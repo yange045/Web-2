@@ -38,43 +38,55 @@
 		// Example 1
     	// Create a Date object calling the Date constructor function
     	// If you don't pass in any parameters/arguments it defaults to the current date and time
-
+		const today = new Date();
+		console.log(today);
 
     	// Example 2
     	// You can pass in parameters for year, month, day, hours, minutes, seconds, milliseconds
-    	
+    	const july1 = new Date(2026, 6, 1);
+		console.log(july1);
 
     	// Example 3
     	// You can pass a timestamp into the constructor
-
+		const dDay = new Date(-806948000000)
+		console.log(dDay);
     	
     	// Example 4
     	// You can also use 'get' methods to extract parts of a date:
-
+		console.log(today.getDate()); 
+		console.log(today.getMonth());
+		console.log(today.getFullYear());
 
     	// Example 5
     	// You can alter dates with various set methods:
-
+		const someDate = new Date();
+		someDate.setFullYear(2000);
+		someDate.setMonth(0);
+		someDate.setDate(1);
+		console.log(someDate);
 
     	// Example 6
     	// Becareful of the difference between getDay() and getDate()
-    	
+    	console.log(today.getDate()); // shows the day of the month (1-31)
+    	console.log(today.getDay()); // returns 0-6 where 0 = Sunday, 1 = Monday, etc
 
     	// Example 7
     	// The getTime() method returns the number of milliseconds that have elapsed since the epoch.
-
+		console.log(today.getTime()); 
 
     	// Example 8
     	// To figure out the difference between to dates, you can subtract the milliseconds
-
+		let differenceInMS = july1.getTime() - today.getTime();
+		console.log(differenceInMS);
 
     	// Example 9
     	// as a short cut, you can just subtract one date from another like this:
-
+		differenceInMS = july1 - today;
+		console.log(`Only ${differenceInMS} milliseconds until July`);
 
     	// Example 10
     	// toDateString() is another useful method to display dates in a format that humans easily recognize
-
+		console.log(today.toDateString());
 
     	//Note that I added code at the top and bottom of this page to figure out how long it takes to load 
 
